@@ -1,50 +1,102 @@
 import React from 'react'
-import pic03 from '../assets/images/pic03.jpg'
 import { Link as ScrollLink } from 'react-scroll'
 import Fade from 'react-reveal/Fade'
 
-const Two = props => (
-  <section
-    id="two"
-    className="spotlight style2 right inactive"
-    style={{ backgroundImage: `url(${pic03})` }}
-  >
-    <span className="image fit main">
-      <img src={pic03} alt="" />
-    </span>
-    <Fade right big>
-      <div className="content">
-        <header>
-          <h2>Interdum amet non magna accumsan</h2>
-          <p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p>
-        </header>
-        <p>
-          Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim
-          mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet
-          augue varius tempus lobortis porttitor lorem et accumsan consequat
-          adipiscing lorem.
-        </p>
-        <ul className="actions">
-          <li>
-            <a href="/" className="button">
-              Learn More
-            </a>
-          </li>
-        </ul>
-      </div>
-    </Fade>
-    <ScrollLink
-      to="three"
-      className="goto-next"
-      activeClass="active"
-      smooth={true}
-      offset={50}
-      duration={1500}
-      spy={true}
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
+import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
+
+const Two = ({ className }) => {
+  const data = useStaticQuery(graphql`
+    query GET_BODAS {
+      pic03: contentfulData(name: { eq: "Bodas" }) {
+        id
+        name
+        tag
+        photo {
+          description
+          fluid {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
+  const pic03 = data.pic03.photo.fluid
+  const alt = data.pic03.tag
+  return (
+    <BackgroundImage
+      Tag="section"
+      className="spotlight style2 right inactive"
+      fluid={pic03}
+      backgroundColor={`#040e18`}
+      id="two"
     >
-      Next
-    </ScrollLink>
-  </section>
-)
+      <section id="two" className="spotlight style2 right inactive">
+        <span className="image fit main">
+          <Img fluid={pic03} alt={alt} />
+        </span>
+        <Fade right big>
+          <div className="content">
+            <header>
+              <h2>Bodas</h2>
+              {/* <p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p> */}
+            </header>
+            <ul>
+              <li>
+                Día tan especial, celebrando una nueva etapa de la vida y
+                proyecto en común con tu pareja.
+              </li>
+              <li>
+                Te acompañamos en la ceremonia religiosa o civil con buena
+                música tradicional que nos identifica como mexicanos.
+              </li>
+              <li>
+                Una buena organización, vestuarios, invitados y por supuesto
+                unos buenos mariachis con el profesionalismo que nos distingue.
+              </li>
+              <li>
+                Nos adaptamos a tu estilo de boda (naturaleza, salón, playa,
+                pueblos magicos, haciendas).
+              </li>
+              <li>
+                El mariachi llega a donde gustes, interpretamos las canciones de
+                tu preferencia u ocasión.
+              </li>
+            </ul>
+            <ul className="actions">
+              <li>
+                <a href="/" className="button">
+                  Informes
+                </a>
+              </li>
+            </ul>
+          </div>
+        </Fade>
+        <ScrollLink
+          to="three"
+          className="goto-next"
+          activeClass="active"
+          smooth={true}
+          offset={50}
+          duration={1500}
+          spy={true}
+        >
+          Next
+        </ScrollLink>
+      </section>
+    </BackgroundImage>
+  )
+}
+
+const StyledBackgroundSection = styled(Two)`
+  width: 100%;
+  background-position: bottom center;
+  background-repeat: repeat-y;
+  background-size: cover;
+`
 
 export default Two

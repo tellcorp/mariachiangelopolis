@@ -1,38 +1,100 @@
 import React from 'react'
+import pic04 from '../assets/images/pic04.jpg'
+import { Link as ScrollLink } from 'react-scroll'
 import Fade from 'react-reveal/Fade'
 
-const Five = props => (
-  <section id="five" className="wrapper style2 special fade inactive">
-    <Fade duration={2500}>
-      <div className="container">
-        <header>
-          <h2>Magna faucibus lorem diam</h2>
-          <p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
-        </header>
-        <form method="post" action="#" className="cta">
-          <div className="row gtr-uniform gtr-50">
-            <div className="col-8 col-12-xsmall">
-              <input
-                aria-label="Your email"
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Your Email Address"
-              />
-            </div>
-            <div className="col-4 col-12-xsmall">
-              <input
-                aria-label="Submit the form"
-                id="submitForm"
-                type="submit"
-                value="Get Started"
-                className="fit primary"
-              />
-            </div>
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
+import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
+
+const Five = ({ className }) => {
+  const data = useStaticQuery(graphql`
+    query GET_EVENTO_EM {
+      pic06: contentfulData(name: { eq: "Eventos Empresariales" }) {
+        id
+        name
+        tag
+        photo {
+          description
+          fluid {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
+  const pic06 = data.pic06.photo.fluid
+  const alt = data.pic06.tag
+
+  return (
+    <BackgroundImage
+      Tag="section"
+      className="spotlight style3 left inactive"
+      fluid={pic06}
+      backgroundColor={`#040e18`}
+      id="three"
+    >
+      <section id="three" className="spotlight style3 left inactive">
+        <span className="image fit main bottom">
+          <Img fluid={pic06} alt={alt} />
+        </span>
+        <Fade left big>
+          <div className="content">
+            <header>
+              <h2>Eventos Empresariales</h2>
+              {/* <p>Accumsan integer ultricies aliquam vel massa sapien phasellus</p> */}
+            </header>
+            <ul>
+              <li>
+                Un acto donde reúnes miembros de tu organización para celebrar
+                un aniversario o logro de la empresa.
+              </li>
+              <li>
+                La fiesta y convivencia entre colaboradores, socios es parte
+                importante para la comunicación e interacción de la
+                organización.
+              </li>
+              <li>
+                En una comunidad una fiesta con mariachi es símbolo de
+                felicidad, identidad y alegría por parte de sus miembros.
+              </li>
+              <li>
+                Cuando se alcanzan las metas de organización o comunidad la
+                música con mariachis se hace sonar con alegría y emoción.
+              </li>
+            </ul>
+            <ul className="actions">
+              <li>
+                <a href="/" className="button">
+                  Informes
+                </a>
+              </li>
+            </ul>
           </div>
-        </form>
-      </div>
-    </Fade>
-  </section>
-)
+        </Fade>
+        <ScrollLink
+          to="four"
+          className="goto-next"
+          activeClass="active"
+          smooth={true}
+          offset={50}
+          duration={1500}
+          spy={true}
+        >
+          Next
+        </ScrollLink>
+      </section>
+    </BackgroundImage>
+  )
+}
+
+const StyledBackgroundSection = styled(Five)`
+  width: 100%;
+  background-position: bottom center;
+  background-repeat: repeat-y;
+  background-size: cover;
+`
 export default Five

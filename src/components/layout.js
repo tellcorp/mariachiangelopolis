@@ -16,14 +16,6 @@ const Layout = ({ children, ...props }) => (
               name
               link
               cl
-              items {
-                link
-                name
-                items {
-                  link
-                  name
-                }
-              }
             }
           }
         }
