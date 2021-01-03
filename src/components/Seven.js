@@ -7,16 +7,16 @@ const Seven = props => (
       <div className="container">
         <div className="row align-items-start">
           <div className="col-6">
-            <a href="">
+            <a href="/">
               <h3>Celular</h3>
               <h5>(52)2226768956</h5>
             </a>
-            <a href="">
+            <a href="/">
               <h3>Email</h3>
               <h5>informes@mariachiangelopolis.com</h5>
             </a>
 
-            <a href="">
+            <a href="/">
               <h3>Dirección</h3>
               <h5>
                 Villa Escondida 5D. Fraccionamiento, cuarta sección, Villas de

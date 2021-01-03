@@ -1,15 +1,13 @@
 import React from 'react'
-import pic04 from '../assets/images/pic04.jpg'
 import { Link as ScrollLink } from 'react-scroll'
 import Fade from 'react-reveal/Fade'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
-const Five = ({ className }) => {
+const Five = () => {
   const data = useStaticQuery(graphql`
     query GET_EVENTO_EM {
       pic06: contentfulData(name: { eq: "Eventos Empresariales" }) {
@@ -91,10 +89,4 @@ const Five = ({ className }) => {
   )
 }
 
-const StyledBackgroundSection = styled(Five)`
-  width: 100%;
-  background-position: bottom center;
-  background-repeat: repeat-y;
-  background-size: cover;
-`
 export default Five

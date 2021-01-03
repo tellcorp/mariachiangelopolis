@@ -1747,7 +1747,7 @@ body .landing {
     @include vendor(
       'background-image',
       (
-        'linear-gradient(top, #{_palette(bg-transparent)}, #{_palette(bg-transparent)})',
+        'linear-gradient(to left, #{_palette(bg-transparent)}, #{_palette(bg-transparent)})',
         'url("../css/images/overlay.png");'
       )
     );
@@ -2391,4 +2391,8 @@ body.is-touch {
 }
 .fondo-azul {
   background-color: rgba(0, 32, 92, 0);
+}
+
+.btn-color {
+  background: rgba(0, 0, 0, 0);
 }

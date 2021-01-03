@@ -13,15 +13,15 @@ module.exports = {
       },
       {
         name: 'Nosotros',
-        link: '#nosotros',
+        link: '/',
       },
       {
         name: 'Servicios',
-        link: '#servicios',
+        link: '/',
       },
       {
         name: 'Contacto',
-        link: '#contacto',
+        link: '/',
         cl: 'button primary',
       },
     ],
@@ -46,13 +46,6 @@ module.exports = {
         theme_color: '#663399',
         display: 'minimal-ui',
         icon: 'src/assets/images/website-icon.png', // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/images/`,
-        name: 'images',
       },
     },
     'gatsby-transformer-sharp',

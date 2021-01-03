@@ -5,10 +5,9 @@ import Fade from 'react-reveal/Fade'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
-const One = ({ className }) => {
+const One = () => {
   const data = useStaticQuery(graphql`
     query GET_HEADER_2 {
       pic02: contentfulData(name: { eq: "header dos" }) {
@@ -83,12 +82,5 @@ const One = ({ className }) => {
     </BackgroundImage>
   )
 }
-
-const StyledBackgroundSection = styled(One)`
-  width: 100%;
-  background-position: bottom center;
-  background-repeat: repeat-y;
-  background-size: cover;
-`
 
 export default One

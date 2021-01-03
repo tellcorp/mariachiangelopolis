@@ -5,10 +5,9 @@ import Fade from 'react-reveal/Fade'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
-const Four = ({ className }) => {
+const Four = () => {
   const data = useStaticQuery(graphql`
     query GET_SERENATA {
       pic05: contentfulData(name: { eq: "Serenatas" }) {
@@ -38,6 +37,8 @@ const Four = ({ className }) => {
     >
       <section id="two" className="spotlight style2 right inactive">
         <span className="image fit main"></span>
+        <Img fluid={pic05} alt={alt} />
+
         <Fade right big>
           <div className="content">
             <header>
@@ -89,10 +90,4 @@ const Four = ({ className }) => {
   )
 }
 
-const StyledBackgroundSection = styled(Four)`
-  width: 100%;
-  background-position: bottom center;
-  background-repeat: repeat-y;
-  background-size: cover;
-`
 export default Four

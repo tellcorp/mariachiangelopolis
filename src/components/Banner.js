@@ -1,13 +1,12 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 import BackgroundImage from 'gatsby-background-image'
 
 import { Link as ScrollLink } from 'react-scroll'
 
-const Banner = ({ className }) => {
+const Banner = () => {
   const data = useStaticQuery(graphql`
     query GET_BANNER_LOGO {
       desktop: contentfulData(name: { eq: "Mariachis en Puebla" }) {
@@ -39,9 +38,9 @@ const Banner = ({ className }) => {
   return (
     <BackgroundImage
       Tag="section"
-      className={className}
       fluid={imageData}
       backgroundColor={`#040e18`}
+      id="banner"
     >
       <section id="banner">
         <div className="content">
@@ -72,12 +71,5 @@ const Banner = ({ className }) => {
     </BackgroundImage>
   )
 }
-
-const StyledBackgroundSection = styled(Banner)`
-  width: 100%;
-  background-position: bottom center;
-  background-repeat: repeat-y;
-  background-size: cover;
-`
 
 export default Banner

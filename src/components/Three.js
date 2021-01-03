@@ -5,10 +5,9 @@ import Fade from 'react-reveal/Fade'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
-const Three = ({ className }) => {
+const Three = () => {
   const data = useStaticQuery(graphql`
     query GET_CUMPLE {
       pic04: contentfulData(name: { eq: "Cumpleaños" }) {
@@ -90,10 +89,4 @@ const Three = ({ className }) => {
   )
 }
 
-const StyledBackgroundSection = styled(Three)`
-  width: 100%;
-  background-position: bottom center;
-  background-repeat: repeat-y;
-  background-size: cover;
-`
 export default Three

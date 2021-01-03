@@ -89,18 +89,16 @@ class Header extends React.Component {
     const siteTitle = this.props.siteTitle
     const menuLinks = this.props.menuLinks
     const open = this.state.mouseOverButton || this.state.mouseOverMenu
-    const subOpen = this.state.mouseOverSubButton || this.state.mouseOverSubMenu
 
     return (
       <React.Fragment>
         <div className={`navbar-menu ${this.state.mobileActiveClass}`}>
           <div id="titleBar">
-            <a
-              role="button"
+            <button
               onClick={() => this.toggleHamburger()}
-              className="toggle"
+              className="toggle btn-color"
               aria-label="Open mobile menu"
-            ></a>
+            ></button>
             <span className="title">
               <Link to="/">{siteTitle}</Link>
             </span>
@@ -142,8 +140,8 @@ class Header extends React.Component {
                                 }
                               : { display: `none` }
                           }
-                          onMouseEnter={this.enterMenu}
-                          onMouseLeave={this.leaveMenu}
+                          // onMouseEnter={this.enterMenu}
+                          // onMouseLeave={this.leaveMenu}
                         ></ul>
                       </li>
                     </React.Fragment>

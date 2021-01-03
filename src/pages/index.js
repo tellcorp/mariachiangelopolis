@@ -27,20 +27,14 @@ class Home extends React.Component {
           ]}
         ></Helmet>
         <Banner />
-        <a id="nosotros">
-          <One />
-        </a>
+        <One />
         <Two />
         <Three />
         <Four />
         <Five />
         <Six />
-        <a id="servicios">
-          <Six_a />
-        </a>
-        <a id="contacto">
-          <Seven />
-        </a>
+        <Six_a />
+        <Seven />
       </Layout>
     )
   }
