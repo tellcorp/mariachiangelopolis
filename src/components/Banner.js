@@ -39,8 +39,7 @@ const Banner = () => {
     <BackgroundImage
       Tag="section"
       fluid={imageData}
-      backgroundColor={`#040e18`}
-      id="banner"
+      // backgroundColor={`#040e18`}
     >
       <section id="banner">
         <div className="content">

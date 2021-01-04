@@ -13,15 +13,15 @@ module.exports = {
       },
       {
         name: 'Nosotros',
-        link: '/',
+        link: '/#nosotros',
       },
       {
         name: 'Servicios',
-        link: '/',
+        link: '/#servicios',
       },
       {
         name: 'Contacto',
-        link: '/',
+        link: '/#contacto',
         cl: 'button primary',
       },
     ],

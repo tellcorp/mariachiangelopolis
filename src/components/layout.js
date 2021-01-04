@@ -1,8 +1,14 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import '../assets/scss/main.scss'
+
 import Header from './Header'
 import Footer from './Footer'
+
+if (typeof window !== 'undefined') {
+  // eslint-disable-next-line global-require
+  require('smooth-scroll')('a[href*="#"]')
+}
 
 const Layout = ({ children, ...props }) => (
   <StaticQuery
