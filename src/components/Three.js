@@ -27,6 +27,14 @@ const Three = () => {
   const pic04 = data.pic04.photo.fluid
   const alt = data.pic04.tag
 
+  const handleWhatsapp = () => {
+    const num = '522226768956'
+    const message =
+      'Hola, me gustaría más detalles sobre sus eventos en Cumpleaños.'
+    const res = message.replace(' ', '%20')
+    window.open(`https://wa.me/${num}?text=${res}`)
+  }
+
   return (
     <BackgroundImage
       Tag="section"
@@ -66,9 +74,9 @@ const Three = () => {
             </ul>
             <ul className="actions">
               <li>
-                <a href="/" className="button">
+                <button className="button" onClick={handleWhatsapp}>
                   Informes
-                </a>
+                </button>
               </li>
             </ul>
           </div>

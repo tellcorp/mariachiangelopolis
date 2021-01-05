@@ -53,28 +53,26 @@ const Seven = props => {
 
   return (
     <section id="five" className="wrapper style2 special fade inactive">
-      <Fade duration={2500}>
+      <Fade duration={1000}>
         <div className="container">
-          <div className="row align-items-start">
+          <div className="row align-items-center">
             <div className="col-6">
-              <a href="/">
+              <a href="tel:+522226768956">
                 <h3>Celular</h3>
                 <h5>(52)2226768956</h5>
               </a>
-              <a href="/">
+              <a href="mailto:informes@mariachiangelopolis.com">
                 <h3>Email</h3>
                 <h5>informes@mariachiangelopolis.com</h5>
               </a>
 
-              <a href="/">
-                <h3>Dirección</h3>
-                <h5>
-                  Villa Escondida 5D. Fraccionamiento, cuarta sección, Villas de
-                  Atlixco, 72197 San Andrés Cholula Pue. En la zona de
-                  ANGELOPOLIS
-                </h5>
-              </a>
+              <h3>Dirección</h3>
+              <h5>
+                Villa Escondida 5D. Fraccionamiento, cuarta sección, Villas de
+                Atlixco, 72197 San Andrés Cholula Pue. En la zona de ANGELOPOLIS
+              </h5>
             </div>
+
             <div className="col-6">
               <form className="cta">
                 <div className="row gtr-uniform gtr-50">

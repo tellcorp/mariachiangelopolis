@@ -27,6 +27,14 @@ const Four = () => {
   const pic05 = data.pic05.photo.fluid
   const alt = data.pic05.tag
 
+  const handleWhatsapp = () => {
+    const num = '522226768956'
+    const message =
+      'Hola, me gustaría más detalles sobre su servicio de serenata.'
+    const res = message.replace(' ', '%20')
+    window.open(`https://wa.me/${num}?text=${res}`)
+  }
+
   return (
     <BackgroundImage
       Tag="section"
@@ -67,9 +75,9 @@ const Four = () => {
             </ul>
             <ul className="actions">
               <li>
-                <a href="/" className="button">
+                <button className="button" onClick={handleWhatsapp}>
                   Informes
-                </a>
+                </button>
               </li>
             </ul>
           </div>

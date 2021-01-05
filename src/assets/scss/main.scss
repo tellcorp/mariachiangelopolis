@@ -1652,7 +1652,8 @@ body .landing {
   height: 3.5em;
   left: 0;
   line-height: 3.5em;
-  position: fixed;
+
+  position: fixed !important;
   top: 0;
   width: 100%;
   z-index: 100;
@@ -1716,7 +1717,7 @@ body .landing {
   }
 
   #header {
-    background: transparent;
+    background: rgba(2, 2, 2, 0.043);
     box-shadow: none;
     position: absolute;
   }
@@ -2235,7 +2236,7 @@ body.is-touch {
     display: block;
     height: 100%;
     left: 0;
-    overflow-y: auto;
+    overflow-y: scroll;
     position: fixed;
     top: 0;
     width: _size(navPanel);
@@ -2397,9 +2398,6 @@ body.is-touch {
   background: rgba(0, 0, 0, 0);
 }
 
-
-
-
 .lds-facebook {
   display: inline-block;
   position: relative;
@@ -2431,7 +2429,8 @@ body.is-touch {
     top: 8px;
     height: 64px;
   }
-  50%, 100% {
+  50%,
+  100% {
     top: 24px;
     height: 32px;
   }

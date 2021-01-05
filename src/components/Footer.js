@@ -4,7 +4,10 @@ const Footer = props => (
   <footer id="footer">
     <ul className="icons">
       <li>
-        <a href="/" className="icon brands alt fa-facebook-f">
+        <a
+          href="https://www.facebook.com/Mariachi-Angelopolis-109752910478506"
+          className="icon brands alt fa-facebook-f"
+        >
           <span className="label">Facebook</span>
         </a>
       </li>
@@ -12,11 +15,6 @@ const Footer = props => (
       <li>
         <a href="/" className="icon brands alt fa-instagram">
           <span className="label">Instagram</span>
-        </a>
-      </li>
-      <li>
-        <a href="/" className="icon solid alt fa-envelope">
-          <span className="label">Email</span>
         </a>
       </li>
     </ul>
