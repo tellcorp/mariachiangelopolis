@@ -12,6 +12,8 @@ const Seven = props => {
     sendOk: '',
   })
 
+  id_ed25519.pub
+
   const handleState = (name, value) => {
     setState({
       ...state,
